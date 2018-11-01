@@ -55,4 +55,11 @@ view: order_items {
     html: <font color="green">{{rendered_value}}</font> ;;
   }
 
+  measure: total_revenue_example {
+    type: sum
+    sql: ${sale_price} ;;
+    value_format_name: usd
+    html: {{ rendered_value | replace: '.', 'µ' | replace: ',',' ' | replace: 'µ', ','}} ;;
+  }
+
 }

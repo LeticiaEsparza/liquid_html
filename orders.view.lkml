@@ -21,6 +21,12 @@ view: orders {
     sql: ${TABLE}.created_at ;;
   }
 
+  dimension: date_example {
+    type: date
+    sql: ${TABLE}.created_at  ;;
+    html: {{ rendered_value | date: "%B %e, %Y" }} ;;
+  }
+
   dimension: status {
     type: string
     sql: ${TABLE}.status ;;
