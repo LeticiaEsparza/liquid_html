@@ -64,4 +64,10 @@ view: order_items {
     html: {{ rendered_value | replace: '.', 'µ' | replace: ',',' ' | replace: 'µ', ','}} ;;
   }
 
+  measure: total_profit {
+    hidden: yes
+    type: number
+    sql: ${total_revenue}-${inventory_items.total_cost} ;;
+  }
+
 }

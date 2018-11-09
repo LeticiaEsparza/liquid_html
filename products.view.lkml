@@ -72,6 +72,19 @@ view: products {
 
   # END OF INTRO TO LINKING EXAMPLES
 
+  # CATEGORY FIELD FOR LINKING EXAMPLE WITH FILTERS AND URL ENCODE
+  dimension: category_example_6 {
+    label: "Category Linked to Dashboard"
+    description: "When we drill into this field, we will be navigated to another dashboard"
+    type: string
+    sql: ${TABLE}.category ;;
+    link: {
+      label: "Category & Brand Info"
+      url: "/dashboards/43?Category={{ value | url_encode }}&Brand={{ _filters['products.brand'] | url_encode }}"
+    }
+  }
+  # END OF THIS EXAMPLE
+
   dimension: department {
     type: string
     sql: ${TABLE}.department ;;
