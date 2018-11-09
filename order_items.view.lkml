@@ -71,4 +71,13 @@ view: order_items {
     value_format_name: usd
   }
 
+  measure: count_test {
+    type: count
+    drill_fields: [products.category, order_items.total_profit]
+    link: {
+      label: "Filtered Drill Modal"
+      url: "{{ link }}&f[order_items.total_profit]=>=50000"
+    }
+  }
+
 }
