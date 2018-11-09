@@ -71,7 +71,9 @@ view: order_items {
     value_format_name: usd
   }
 
-  measure: count_test {
+  measure: count_test_1 {
+    group_label: "Link Liquid Parameter Examples"
+    label: "Count with Filtered Drill Modal"
     type: count
     drill_fields: [products.category, order_items.total_profit]
     link: {
@@ -80,4 +82,11 @@ view: order_items {
     }
   }
 
+  measure: count_test_2 {
+    group_label: "Link Liquid Parameter Examples"
+    label: "Count with Filtered Linked Explore"
+    type: count
+    drill_fields: [products.category, order_items.total_profit]
+    html: <a href="{{ link }}&f[order_items.total_profit]=>=50000">{{ rendered_value }}</a> ;;
+  }
 }
