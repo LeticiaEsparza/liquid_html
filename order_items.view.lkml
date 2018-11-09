@@ -68,6 +68,7 @@ view: order_items {
     hidden: yes
     type: number
     sql: ${total_revenue}-${inventory_items.total_cost} ;;
+    value_format_name: usd
   }
 
 }

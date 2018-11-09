@@ -105,6 +105,9 @@
     y_axis_gridlines: true
     show_view_names: false
     point_style: circle_outline
+    series_colors:
+        order_items.total_profit: "#00635D"
+        orders.count: "#07BEB8"
     series_types:
       order_items.total_profit: line
     limit_displayed_rows: false
@@ -155,26 +158,7 @@
     width: 14
     height: 9
   - title: Orders Per Category
-    name: Orders Per Category A
-    model: liquid_html
-    explore: order_items
-    type: looker_pie
-    fields:
-    - products.category
-    - orders.count
-    sorts:
-    - orders.count desc
-    limit: 500
-    column_limit: 50
-    series_types: {}
-    listen:
-      Brand: products.brand
-    row: 11
-    col: 7
-    width: 10
-    height: 9
-  - title: Orders Per Category
-    name: Orders Per Category B
+    name: Orders Per Category
     model: liquid_html
     explore: order_items
     type: table
