@@ -163,7 +163,7 @@
     explore: order_items
     type: table
     fields:
-    - products.category
+    - products.category_example_6
     - orders.count
     filters: {}
     sorts:

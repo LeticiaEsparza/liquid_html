@@ -80,7 +80,7 @@ view: products {
     sql: ${TABLE}.category ;;
     link: {
       label: "Category & Brand Info"
-      url: "/dashboards/43?Category={{ value | url_encode }}&Brand={{ _filters['products.brand'] | url_encode }}"
+      url: "/dashboards/16?Category={{ value | url_encode }}&Brand={{ _filters['products.brand'] | url_encode }}"
     }
   }
   # END OF THIS EXAMPLE
