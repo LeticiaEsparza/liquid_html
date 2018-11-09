@@ -78,11 +78,11 @@ view: products {
     description: "When we drill into this field, we will be navigated to another dashboard"
     type: string
     sql: ${TABLE}.category ;;
-    html:  <a href="/dashboards/16?Category={{ value | url_encode }}&Brand={{ _filters['products.brand'] | url_encode }}">{{ value }}</a> ;;
-#     link: {
-#       label: "Category & Brand Info"
-#       url: "/dashboards/16?Category={{ value | url_encode }}&Brand={{ _filters['products.brand'] | url_encode }}"
-#     }
+#     html:  <a href="/dashboards/16?Category={{ value | url_encode }}&Brand={{ _filters['products.brand'] | url_encode }}">{{ value }}</a> ;;
+    link: {
+      label: "Category & Brand Info"
+      url: "/dashboards/16?Category={{ value | url_encode }}&Brand={{ _filters['products.brand'] | url_encode }}"
+    }
   }
   # END OF THIS EXAMPLE
 
