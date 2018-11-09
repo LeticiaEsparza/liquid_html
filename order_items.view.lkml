@@ -49,6 +49,7 @@ view: order_items {
   }
 
   measure: total_profit_example {
+    group_label: "Formatting Examples"
     type: number
     sql: ${total_revenue}-${inventory_items.total_cost} ;;
     value_format_name: usd
@@ -56,6 +57,7 @@ view: order_items {
   }
 
   measure: total_revenue_example {
+    group_label: "Formatting Examples"
     type: sum
     sql: ${sale_price} ;;
     value_format_name: usd

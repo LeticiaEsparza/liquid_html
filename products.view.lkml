@@ -18,6 +18,8 @@ view: products {
   }
 
   dimension: category_example_1 {
+    group_label: "Formatting Examples"
+    label: "Category Formatted"
     type: string
     sql: ${TABLE}.category ;;
     html: <p style="color: #166088; background-color: #B3F5F7; font-size: 150%; font-weight: bold; text-align:center">{{value}}</p> ;;
