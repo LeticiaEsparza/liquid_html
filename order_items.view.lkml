@@ -74,6 +74,7 @@ view: order_items {
   measure: count_test_1 {
     group_label: "Link Liquid Parameter Examples"
     label: "Count with Filtered Drill Modal"
+    description: "When we drill into this measure, the results in the drill modal will be filtered"
     type: count
     drill_fields: [products.category, order_items.total_profit]
     link: {
