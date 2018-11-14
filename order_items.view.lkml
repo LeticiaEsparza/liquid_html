@@ -95,4 +95,43 @@ view: order_items {
   }
 # END OF LINK LIQUID VARIABLE EXAMPLES
 
+  #LOGIC EXAMPLES
+  measure: total_profit_logic_1 {
+    group_label: "Logic Examples"
+    label: "Total Profit Conditionally Formatted 1"
+    description: "The values of this field are conditionally formatted"
+    type: number
+    sql: ${total_revenue} - ${inventory_items.total_cost} ;;
+    value_format_name: usd
+    html: {% if value >= 75000 %}
+              <font color="green">{{rendered_value}}</font>
+          {% elsif value >= 50000 and value < 75000 %}
+              <font color="goldenrod">{{rendered_value}}</font>
+          {% else %}
+              <font color="red">{{rendered_value}}</font>
+          {% endif %}
+          ;;
+    }
+
+  measure: total_profit_logic_2 {
+    group_label: "Logic Examples"
+    label: "Total Profit Conditionaly Formatted 2"
+    description: "The values of this field are conditionally formatted if the products.category field is included in the query."
+    type: number
+    sql: ${total_revenue}-${inventory_items.total_cost} ;;
+    value_format_name: usd
+    html: {% if products.category._in_query and value >= 75000 %}
+              <font color="green">{{rendered_value}}</font>
+          {% elsif products.category._in_query and value >= 50000 and value < 75000 %}
+              <font color="goldenrod">{{rendered_value}}</font>
+          {% elsif products.category._in_query %}
+              <font color="red">{{rendered_value}}</font>
+          {% else %}
+              {{rendered_value}}
+          {% endif %}
+          ;;
+    }
+
+# END OF LOGIC EXAMPLES
+
 }
