@@ -72,7 +72,7 @@ view: order_items {
   }
 
   measure: count_test_1 {
-    group_label: "Link Liquid Parameter Examples"
+    group_label: "Link Liquid Variable Examples"
     label: "Count with Filtered Drill Modal"
     description: "When we drill into this measure, the results in the drill modal will only show records where Total Profit >= 50000. This link uses the link parameter."
     type: count
@@ -84,7 +84,7 @@ view: order_items {
   }
 
   measure: count_test_2 {
-    group_label: "Link Liquid Parameter Examples"
+    group_label: "Link Liquid Variable Examples"
     label: "Count with Filtered Linked Explore"
     description: "When we drill into this measure, we will be sent to an explore that will show records where Total Profit >= 50000. This link uses the HTML parameter."
     type: count
@@ -92,11 +92,4 @@ view: order_items {
     html: <a href="{{ link }}&f[order_items.total_profit]=>=50000">{{ rendered_value }}</a> ;;
   }
 
-  measure: count_example_3 {
-    label: "Count linked_value Example"
-    description: "This count has drill fields and drilling is preserved because we are using the linked_value liquid variable"
-    type: count
-    drill_fields: [orders.id,orders.created_date,orders.created_quarter,orders.status,orders.user_id,order_items.total_profit]
-    html: <p style="font-size: 15px">{{linked_value}}</p> ;;
-  }
 }
