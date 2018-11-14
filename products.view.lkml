@@ -86,6 +86,27 @@ view: products {
   }
   # END OF THIS EXAMPLE
 
+  # FILTERABLE VALUE EXAMPLES
+  dimension: brand_example_1 {
+    group_label: "filterable_value Examples"
+    label: "Brand with Link that Fails"
+    description: "If we click on the values in this field, we will be navigated to an explore that fails to escape commas"
+    type: string
+    sql: ${TABLE}.brand ;;
+    html: <a href="/explore/liquid_html/order_items?fields=products.brand,orders.count,order_items.total_revenue,order_items.total_profit,users.count&f[products.brand]={{ value }}">{{ value }}</a> ;;
+  }
+
+  dimension: brand_example_2 {
+    group_label: "filterable_value Examples"
+    label: "Brand with Link that Succeeds"
+    description: "If we click on the values in this field, we will be navigated to an explore that successfully escapes commas"
+    type: string
+    sql: ${TABLE}.brand ;;
+    html: <a href="/explore/liquid_html/order_items?fields=products.brand,orders.count,order_items.total_revenue,order_items.total_profit,users.count&f[products.brand]={{ filterable_value }}">{{ value }}</a> ;;
+  }
+
+ # END OF FILTERABLE VALUE EXAMPLES
+
   dimension: department {
     type: string
     sql: ${TABLE}.department ;;
