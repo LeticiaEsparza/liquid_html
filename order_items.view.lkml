@@ -46,6 +46,7 @@ view: order_items {
   measure: total_revenue {
     type: sum
     sql: ${sale_price};;
+    value_format_name: usd
   }
 
   measure: total_profit_example {
