@@ -48,6 +48,7 @@ view: orders {
     drill_fields: [id, users.id, users.first_name, users.last_name, order_items.count]
   }
 
+  # LINKED_VALUE EXAMPLES
   measure: count_example_3 {
     group_label: "linked_value Liquid Variable Examples"
     label: "Count: Example of Drills Not Working"
@@ -65,5 +66,6 @@ view: orders {
     drill_fields: [orders.id,orders.created_date,orders.created_quarter,orders.status,orders.user_id,order_items.total_profit]
     html: <p style="font-size: 15px">{{linked_value}}</p> ;;
   }
+  # END OF LINKED_VALUE EXAMPLES
 
 }

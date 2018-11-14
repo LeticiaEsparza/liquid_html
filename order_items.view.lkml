@@ -72,6 +72,7 @@ view: order_items {
     value_format_name: usd
   }
 
+#LINK LIQUID VARIABLE EXAMPLES
   measure: count_test_1 {
     group_label: "Link Liquid Variable Examples"
     label: "Count with Filtered Drill Modal"
@@ -92,5 +93,6 @@ view: order_items {
     drill_fields: [products.category, order_items.total_profit]
     html: <a href="{{ link }}&f[order_items.total_profit]=>=50000">{{ rendered_value }}</a> ;;
   }
+# END OF LINK LIQUID VARIABLE EXAMPLES
 
 }
