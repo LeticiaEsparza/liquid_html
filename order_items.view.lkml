@@ -74,7 +74,7 @@ view: order_items {
   measure: count_test_1 {
     group_label: "Link Liquid Parameter Examples"
     label: "Count with Filtered Drill Modal"
-    description: "When we drill into this measure, the results in the drill modal will be filtered"
+    description: "When we drill into this measure, the results in the drill modal will only show records where Total Profit >= 50000"
     type: count
     drill_fields: [products.category, order_items.total_profit]
     link: {
@@ -86,6 +86,7 @@ view: order_items {
   measure: count_test_2 {
     group_label: "Link Liquid Parameter Examples"
     label: "Count with Filtered Linked Explore"
+    description: "When we drill into this measure, we will be sent to an explore that will show records where Total Profit >= 50000"
     type: count
     drill_fields: [products.category, order_items.total_profit]
     html: <a href="{{ link }}&f[order_items.total_profit]=>=50000">{{ rendered_value }}</a> ;;
