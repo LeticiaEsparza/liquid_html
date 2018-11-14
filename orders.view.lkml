@@ -54,7 +54,7 @@ view: orders {
     description: "This count has drill fields and drilling is not preserved because we are using the incorrect liquid variable."
     type: count
     drill_fields: [orders.id,orders.created_date,orders.created_quarter,orders.status,orders.user_id,order_items.total_profit]
-    html: html: <p style="font-size: 15px">{{rendered_value}}</p> ;;
+    html: <p style="font-size: 15px">{{rendered_value}}</p> ;;
   }
 
   measure: count_example_4 {
