@@ -91,4 +91,12 @@ view: order_items {
     drill_fields: [products.category, order_items.total_profit]
     html: <a href="{{ link }}&f[order_items.total_profit]=>=50000">{{ rendered_value }}</a> ;;
   }
+
+  measure: count_example_3 {
+    label: "Count linked_value Example"
+    description: "This count has drill fields and drilling is preserved because we are using the linked_value liquid variable"
+    type: count
+    drill_fields: [orders.id,orders.created_date,orders.created_quarter,orders.status,orders.user_id,order_items.total_profit]
+    html: <p style="font-size: 15px">{{linked_value}}</p> ;;
+  }
 }
