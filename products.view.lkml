@@ -109,20 +109,20 @@ view: products {
 
 #EXAMPLES FOR LOGIC
 
-#   dimension: category_logic {
-#     group_label: "Logic Examples"
-#     label: "Category Conditionally Formatted"
-#     description: "This field will be formatted based on a user attribute"
-#     type: string
-#     sql: ${TABLE}.category ;;
-#     html:
-#         {% if _user_attributes['company'] == "Looker" %}
-#           <p style="color: #5A2FC2; background-color: #E5E5E6; font-size: 180%; font-weight: bold; text-align:center">{{value}}</p>
-#         {% else %}
-#           <p style="color: #166088; background-color: #B3F5F7; font-size: 180%; font-weight: bold; text-align:center">{{value}}</p>
-#         {% endif %}
-#   ;;
-#   }
+  dimension: category_logic {
+    group_label: "Logic Examples"
+    label: "Category Conditionally Formatted"
+    description: "This field will be formatted based on a user attribute."
+    type: string
+    sql: ${TABLE}.category ;;
+    html:
+        {% if _user_attributes['company'] == "Looker" %}
+            <p style="color: #5A2FC2; background-color: #E5E5E6; font-size: 180%; font-weight: bold; text-align:center">{{value}}</p>
+        {% else %}
+            <p style="color: #166088; background-color: #B3F5F7; font-size: 180%; font-weight: bold; text-align:center">{{value}}</p>
+        {% endif %}
+  ;;
+  }
 
  #END OF EXAMPLES FOR LOGIC
 
