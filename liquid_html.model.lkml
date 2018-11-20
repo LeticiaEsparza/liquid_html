@@ -11,6 +11,7 @@ datagroup: liquid_html_default_datagroup {
 persist_with: liquid_html_default_datagroup
 
 explore: inventory_items {
+  hidden: yes
   join: products {
     type: left_outer
     sql_on: ${inventory_items.product_id} = ${products.id} ;;
@@ -45,6 +46,7 @@ explore: order_items {
 }
 
 explore: orders {
+  hidden: yes
   join: users {
     type: left_outer
     sql_on: ${orders.user_id} = ${users.id} ;;
@@ -53,6 +55,7 @@ explore: orders {
 }
 
 explore: product_facts {
+  hidden: yes
   join: products {
     type: left_outer
     sql_on: ${product_facts.product_id} = ${products.id} ;;
@@ -60,6 +63,10 @@ explore: product_facts {
   }
 }
 
-explore: products {}
+explore: products {
+  hidden: yes
+}
 
-explore: users {}
+explore: users {
+  hidden: yes
+}
