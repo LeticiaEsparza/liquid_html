@@ -75,7 +75,7 @@ view: products {
   # CATEGORY FIELD FOR LINKING EXAMPLE WITH FILTERS AND URL ENCODE
   dimension: category_example_6 {
     label: "Category Linked to Dashboard"
-    description: "When we drill into this field, we will be navigated to another dashboard"
+    description: "When we drill into this field, we will be navigated to dashboard 16. Best if used to drill from dashboard 15."
     type: string
     sql: ${TABLE}.category ;;
 #     html:  <a href="/dashboards/16?Category={{ value | url_encode }}&Brand={{ _filters['products.brand'] | url_encode }}">{{ value }}</a> ;;
