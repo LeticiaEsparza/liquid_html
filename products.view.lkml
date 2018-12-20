@@ -24,6 +24,13 @@ view: products {
     sql: ${TABLE}.category ;;
     html: <p style="color: #166088; background-color: #B3F5F7; font-size: 150%; font-weight: bold; text-align:center">{{value}}</p> ;;
   }
+  dimension: exampledample {
+    group_label: "Formatting Examples"
+    label: "Category Formatted"
+    type: string
+    sql: ${TABLE} ;;
+    html: <p style="color: #166060; background-color: #B3F5F7; font-size: 165%; font-weight: bold; text-align:center">{{value}}</p> ;;
+  }
 
   # INTRO TO LINKING EXAMPLES
   dimension: category_example_2 {
