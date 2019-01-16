@@ -62,8 +62,7 @@ view: order_items {
     type: sum
     sql: ${sale_price} ;;
     value_format_name: usd
-    html: {{ rendered_value | replace: '.', 'µ' | replace: ',',' ' | replace: 'µ', ','}} ;;
-  }
+    html: {{ rendered_value | replace: ',', ' ' | replace: '.',',' }} ;;  }
 
   measure: total_profit {
     hidden: yes
