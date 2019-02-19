@@ -63,6 +63,14 @@ explore: product_facts {
   }
 }
 
+explore: customer_facts {
+  hidden: yes
+  join: orders {
+    relationship: many_to_many
+    sql_on: ${customer_facts.user_id}=${orders.user_id} ;;
+  }
+}
+
 explore: products {
   hidden: yes
 }
