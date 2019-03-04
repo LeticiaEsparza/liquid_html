@@ -10,6 +10,8 @@ datagroup: liquid_html_default_datagroup {
 
 persist_with: liquid_html_default_datagroup
 
+
+explore: inventory_item_facts {hidden: yes}
 explore: inventory_items {
   hidden: yes
   join: products {
