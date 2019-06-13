@@ -48,6 +48,25 @@ view: orders {
     drill_fields: [id, users.id, users.first_name, users.last_name, order_items.count]
   }
 
+  filter: status_filter {
+    type: string
+    suggest_dimension: orders.status
+  }
+
+  dimension: status_satisfies_filter {
+    #hidden: yes
+    type: yesno
+    sql: {% condition status_filter %} ${status} {% endcondition %} ;;
+  }
+
+  measure: count_dynamic_status {
+    type: count
+    filters: {
+      field: status_satisfies_filter
+      value: "yes"
+    }
+  }
+
   # LINKED_VALUE EXAMPLES
   measure: count_example_3 {
     group_label: "linked_value Liquid Variable Examples"
