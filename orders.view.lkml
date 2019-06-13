@@ -27,31 +27,6 @@ view: orders {
     html: {{ rendered_value | date: "%B %e, %Y" }} ;;
   }
 
-  parameter: date_granularity {
-    type: string
-    allowed_value: { value: "Day" }
-    allowed_value: { value: "Month" }
-    allowed_value: { value: "Quarter" }
-    allowed_value: { value: "Year" }
-  }
-
-  dimension: date_granularity_test {
-    label_from_parameter: date_granularity
-    sql:
-       CASE
-         WHEN {% parameter date_granularity %} = 'Day' THEN
-           ${created_date}
-         WHEN {% parameter date_granularity %} = 'Month' THEN
-           ${created_month}
-         WHEN {% parameter date_granularity %} = 'Quarter' THEN
-           ${created_quarter}
-         WHEN {% parameter date_granularity %} = 'Year' THEN
-           ${created_year}
-         ELSE
-           NULL
-       END ;;
-  }
-
   dimension: status {
     type: string
     sql: ${TABLE}.status ;;
