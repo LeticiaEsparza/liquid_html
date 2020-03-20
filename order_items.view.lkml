@@ -49,7 +49,15 @@ view: order_items {
     value_format_name: usd
   }
 
-  measure: total_profit_example {
+  measure: total_profit_example_value {
+    group_label: "Formatting Examples"
+    type: number
+    sql: ${total_revenue}-${inventory_items.total_cost} ;;
+    value_format_name: usd
+    html: <font color="green">{{value}}</font> ;;
+  }
+
+  measure: total_profit_example_rendered_value {
     group_label: "Formatting Examples"
     type: number
     sql: ${total_revenue}-${inventory_items.total_cost} ;;
