@@ -17,6 +17,15 @@ view: products {
     sql: ${TABLE}.category ;;
   }
 
+
+  dimension: category_example_0 {
+    group_label: "Formatting Examples"
+    label: "Formatted Text"
+    type: string
+    sql: ${TABLE}.category ;;
+    html: <p style="color: #166088; background-color: #B3F5F7; font-size: 150%; font-weight: bold; text-align:center">text</p> ;;
+  }
+
   dimension: category_example_1 {
     group_label: "Formatting Examples"
     label: "Category Formatted"
