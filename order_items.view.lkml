@@ -49,6 +49,20 @@ view: order_items {
     value_format_name: usd
   }
 
+
+  measure: total_revenue_formatted {
+    type: sum
+    sql: ${sale_price} - 0.5;;
+    html: {% if value < 0 %}
+          <p style="color:red">({{rendered_value}})</p>
+          {% else %}
+          <p>{{rendered_value}}</p>
+          {% endif %}
+
+    ;;
+    value_format_name: usd
+  }
+
   measure: total_profit_example_value {
     group_label: "Formatting Examples"
     type: number
