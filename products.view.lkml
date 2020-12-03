@@ -15,7 +15,7 @@ view: products {
   dimension: brand_linked {
     type: string
     sql: ${TABLE}.brand ;;
-    html: <a href="https://www.google.com/search?q={{value}}">{{value}}</a> ;;
+    html: <a href="https://www.google.com/search?q={{value | url_encode }}">{{value}}</a> ;;
   }
 
   dimension: category {
